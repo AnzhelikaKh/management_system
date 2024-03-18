@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a79ec209fc64ca7875271d2a25b6c44" Name="Diagram1" ZoomLevel="52">
+        <EntityTypeShape EntityType="RestaurantDbModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="RestaurantDbModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.375" />
+        <EntityTypeShape EntityType="RestaurantDbModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="3.625" />
+        <EntityTypeShape EntityType="RestaurantDbModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="RestaurantDbModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" />
+        <AssociationConnector Association="RestaurantDbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="RestaurantDbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="RestaurantDbModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="RestaurantDbModel.Item" Width="1.5" PointX="6" PointY="12" />
+        <EntityTypeShape EntityType="RestaurantDbModel.Order" Width="1.5" PointX="6" PointY="8.75" />
+        <EntityTypeShape EntityType="RestaurantDbModel.OrderItem" Width="1.5" PointX="8.25" PointY="8.875" />
+        <EntityTypeShape EntityType="RestaurantDbModel.Table" Width="1.5" PointX="3.75" PointY="9.125" />
+        <AssociationConnector Association="RestaurantDbModel.FK_OrderItems_Item" />
+        <AssociationConnector Association="RestaurantDbModel.FK_Order_Customer" />
+        <AssociationConnector Association="RestaurantDbModel.FK_OrderItems_Order" />
+        <EntityTypeShape EntityType="RestaurantDbModel.OrderDetail" Width="1.5" PointX="10.75" PointY="8.625" />
+        <AssociationConnector Association="RestaurantDbModel.FK_OrderDetails_Order" />
+        <EntityTypeShape EntityType="RestaurantDbModel.PaymentType" Width="1.5" PointX="10.375" PointY="5" />
+        <EntityTypeShape EntityType="RestaurantDbModel.Transaction" Width="1.5" PointX="8.25" PointY="1.75" />
+        <AssociationConnector Association="RestaurantDbModel.FK_Transactions_Order" />
+        <AssociationConnector Association="RestaurantDbModel.FK_Transactions_PaymentTypes" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

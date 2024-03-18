@@ -1,0 +1,64 @@
+﻿
+@model IEnumerable <Restaurant_Management_System_MVc.Controllers.UserInRoleViewModel> 
+
+@{
+    ViewBag.Title = "Manage Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manage Users</h2>
+
+<div class="form-group">
+    <input type="button" style="margin-top:20px" value="Create New User" id="btnCreateUser" class="btn"
+           onclick="@("window.location.href='" + @Url.Action("Register", "Account") + "'");"/>
+</div>
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            Email
+        </th>
+        <th>
+            User Name
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th>
+            Role
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var user in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(u => user.Email)
+            </th>
+            <th>
+                @Html.DisplayFor(u => user.UserName).ToString()
+            </th>
+            <th>
+                @Html.DisplayFor(u => user.PhoneNumber).ToString()
+            </th>
+            <th>
+                @Html.DisplayFor(u => user.Role).ToString()
+            </th>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Account", new { userId = user.Id, email = user.Email, userName = user.UserName, phoneNo = user.PhoneNumber, role = user.Role }, new { }) |
+                @Html.ActionLink("Reset PW", "ResetPassword", "Account", new { email = user.Email }, new { }) |
+                @Html.ActionLink("Delete", "Delete", "Account", new { userId = user.Id }, new { })
+            </td>
+        </tr>
+    }
+
+</table>
+
